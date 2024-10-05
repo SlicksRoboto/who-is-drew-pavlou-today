@@ -1,5 +1,3 @@
-# who-is-drew-pavlou-today
-drew-pavlou-ethnicity-randomizer
 
 # Who is Drew Pavlou Today?
 
