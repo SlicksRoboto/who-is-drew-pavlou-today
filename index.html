@@ -5,10 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Who is Drew Pavlou today?</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap');
+
         body {
             background-color: black;
-            color: green;
-            font-family: 'Courier New', Courier, monospace; /* Commonly used for a calculator-like font */
+            color: #00ff00;
+            font-family: 'Roboto Mono', monospace;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -17,28 +19,45 @@
         }
         .container {
             text-align: center;
+            padding: 20px;
+            border: 2px solid #00ff00;
+            border-radius: 10px;
+            background-color: rgba(0, 255, 0, 0.1);
+        }
+        h1 {
+            font-size: 2em;
+            margin-bottom: 20px;
+            text-shadow: 0 0 5px #00ff00;
         }
         .display {
-            font-size: 2em;
+            font-size: 2.5em;
             margin: 20px 0;
+            min-height: 1.2em;
+            font-weight: 700;
+            text-shadow: 0 0 10px #00ff00;
         }
         button {
-            background-color: green;
+            background-color: #00ff00;
             color: black;
             border: none;
             padding: 10px 20px;
-            font-size: 1em;
+            font-size: 1.2em;
             cursor: pointer;
+            font-family: 'Roboto Mono', monospace;
+            font-weight: 700;
+            border-radius: 5px;
+            transition: all 0.3s ease;
         }
         button:hover {
-            background-color: darkgreen;
+            background-color: #00cc00;
+            box-shadow: 0 0 15px #00ff00;
         }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>Today, Drew Pavlou is...</h1>
-        <div class="display" id="ethnicityDisplay">
+        <div class="display" id="identityDisplay">
             Click Generate!
         </div>
         <button onclick="generateIdentity()">Generate New Identity</button>
@@ -70,13 +89,13 @@
         ];
 
         function generateIdentity() {
-            const display = document.getElementById('ethnicityDisplay');
+            const display = document.getElementById('identityDisplay');
             display.textContent = '...';
 
             setTimeout(() => {
                 if (Math.random() < 0.5) {
                     const randomFood = foods[Math.floor(Math.random() * foods.length)];
-                    display.textContent = `EATING ${randomFood.toUpperCase()}`;
+                    display.textContent = randomFood.toUpperCase();
                 } else {
                     const randomEthnicity = ethnicities[Math.floor(Math.random() * ethnicities.length)];
                     display.textContent = randomEthnicity.toUpperCase();
