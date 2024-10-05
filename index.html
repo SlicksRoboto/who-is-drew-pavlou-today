@@ -44,9 +44,13 @@
         display.textContent = '...';
         
         setTimeout(() => {
-            const randomEthnicity = ethnicities[Math.floor(Math.random() * ethnicities.length)];
-            const randomFood = foods[Math.floor(Math.random() * foods.length)];
-            display.textContent = `${randomEthnicity.toUpperCase()} ${randomFood.toUpperCase()}`;
+            if (Math.random() < 0.5) {
+                const randomEthnicity = ethnicities[Math.floor(Math.random() * ethnicities.length)];
+                display.textContent = randomEthnicity.toUpperCase();
+            } else {
+                const randomFood = foods[Math.floor(Math.random() * foods.length)];
+                display.textContent = randomFood.toUpperCase();
+            }
         }, 500);
     }
 </script>
