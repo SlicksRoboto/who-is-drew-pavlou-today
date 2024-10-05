@@ -12,7 +12,7 @@ A humorous web-based randomizer that generates various fictional and real ethnic
 
 ## 🚀 Live Demo
 
-[Click here to see it in action!](#) (You'll add the actual URL once deployed)
+https://slicksroboto.github.io/who-is-drew-pavlou-today/
 
 ## 💻 Technologies Used
 
@@ -32,7 +32,7 @@ To run this project locally:
 
 1. Clone the repository
 ```bash
-git clone https://github.com/yourusername/repo-name.git
+git clone https://github.com/slicksroboto/repo-name.git
 ```
 2. Open `index.html` in your browser
 
