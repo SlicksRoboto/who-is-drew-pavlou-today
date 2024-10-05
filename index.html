@@ -4,109 +4,56 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Who is Drew Pavlou today?</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #1a1a1a;
-            color: #00ff00;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-        }
-        .container {
-            text-align: center;
-        }
-        .display {
-            font-family: 'Courier New', monospace;
-            border: 2px solid #00ff00;
-            padding: 20px;
-            margin: 20px 0;
-            min-width: 300px;
-            min-height: 50px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        button {
-            background-color: #00ff00;
-            color: #000000;
-            border: none;
-            padding: 10px 20px;
-            cursor: pointer;
-            font-size: 16px;
-        }
-        button:hover {
-            background-color: #00cc00;
-        }
-    </style>
 </head>
-    
 <body>
     <div class="container">
         <h1>Today, Drew Pavlou is...</h1>
         <div class="display" id="ethnicityDisplay">
             Click Generate!
         </div>
-        <button onclick="generateEthnicity()">Generate New Identity</button>
+        <button onclick="generateIdentity()">Generate New Identity</button>
     </div>
 
-<script>
-    const ethnicities = [
-        // Fictional Ethnicities
-        'Vulcan', 'Klingon', 'Hobbit', 'Time Lord', 'Atlantean',
-        'Martian', 'Asgardian', 'Wakandan', 'Naboo', 'Elven',
-        'Romulan', "Na'vi", 'Gallifreyan', 'Dothraki', 'Andorian',
-        'Wookiee', 'Minion', 'Pandoran', 'Gondorian', 'Ferengi',
-        
-        // Real Earth Ethnicities and Nationalities
-        'Italian', 'Japanese', 'Brazilian', 'Nigerian', 'Russian',
-        'Indian', 'Greek', 'Korean', 'Egyptian', 'Mexican',
-        'Irish', 'Vietnamese', 'Turkish', 'Persian', 'Scottish',
-        'Polynesian', 'Mongolian', 'Inuit', 'Maori', 'Bengali'
-    ];
+    <script>
+        const ethnicities = [
+            'Vulcan', 'Klingon', 'Hobbit', 'Time Lord', 'Atlantean',
+            'Martian', 'Asgardian', 'Wakandan', 'Naboo', 'Elven',
+            'Romulan', "Na'vi", 'Gallifreyan', 'Dothraki', 'Andorian',
+            'Wookiee', 'Minion', 'Pandoran', 'Gondorian', 'Ferengi',
+            'Italian', 'Japanese', 'Brazilian', 'Nigerian', 'Russian',
+            'Indian', 'Greek', 'Korean', 'Egyptian', 'Mexican',
+            'Irish', 'Vietnamese', 'Turkish', 'Persian', 'Scottish',
+            'Polynesian', 'Mongolian', 'Inuit', 'Maori', 'Bengali'
+        ];
 
-    const foods = [
-        // Asian Foods
-        'Sushi', 'Dim Sum', 'Pho', 'Pad Thai', 'Biryani',
-        'Korean BBQ', 'Ramen', 'Butter Chicken', 'Xiaolongbao', 'Satay',
-        
-        // European Foods
-        'Pizza', 'Paella', 'Croissant', 'Fish & Chips', 'Schnitzel',
-        'Moussaka', 'Pierogi', 'Carbonara', 'Borscht', 'Goulash',
-        
-        // Middle Eastern Foods
-        'Hummus', 'Falafel', 'Shawarma', 'Kebab', 'Dolma',
-        
-        // American Foods
-        'Hamburger', 'Hot Dog', 'Apple Pie', 'Buffalo Wings', 'Jambalaya',
-        
-        // Latin American Foods
-        'Tacos', 'Empanadas', 'Ceviche', 'Pupusas', 'Arepas',
-        
-        // African Foods
-        'Jollof Rice', 'Injera', 'Bobotie', 'Fufu', 'Pap en Vleis',
-        
-        // Fictional Foods
-        'Lembas Bread', 'Klingon Gagh', 'Romulan Ale', 'Butterbeer',
-        'Everlasting Gobstopper', 'Krabby Patty', 'Bachelor Chow'
-    ];
+        const foods = [
+            'Sushi', 'Dim Sum', 'Pho', 'Pad Thai', 'Biryani',
+            'Korean BBQ', 'Ramen', 'Butter Chicken', 'Xiaolongbao', 'Satay',
+            'Pizza', 'Paella', 'Croissant', 'Fish & Chips', 'Schnitzel',
+            'Moussaka', 'Pierogi', 'Carbonara', 'Borscht', 'Goulash',
+            'Hummus', 'Falafel', 'Shawarma', 'Kebab', 'Dolma',
+            'Hamburger', 'Hot Dog', 'Apple Pie', 'Buffalo Wings', 'Jambalaya',
+            'Tacos', 'Empanadas', 'Ceviche', 'Pupusas', 'Arepas',
+            'Jollof Rice', 'Injera', 'Bobotie', 'Fufu', 'Pap en Vleis',
+            'Lembas Bread', 'Klingon Gagh', 'Romulan Ale', 'Butterbeer',
+            'Everlasting Gobstopper', 'Krabby Patty', 'Bachelor Chow'
+        ];
 
-    function generateIdentity() {
-        const display = document.getElementById('ethnicityDisplay');
-        display.textContent = '...';
-        
-        setTimeout(() => {
-            if (Math.random() < 0.5) {
-                const randomEthnicity = ethnicities[Math.floor(Math.random() * ethnicities.length)];
-                display.textContent = randomEthnicity.toUpperCase();
-            } else {
-                const randomFood = foods[Math.floor(Math.random() * foods.length)];
-                display.textContent = randomFood.toUpperCase();
-            }
-        }, 500);
-    }
-</script>
+        function generateIdentity() {
+            const display = document.getElementById('ethnicityDisplay');
+            display.textContent = '...'; // Temporary display while generating
+
+            setTimeout(() => {
+                // Randomly decide whether to show a food or an ethnicity
+                if (Math.random() < 0.5) {
+                    const randomFood = foods[Math.floor(Math.random() * foods.length)];
+                    display.textContent = `EATING ${randomFood.toUpperCase()}`;
+                } else {
+                    const randomEthnicity = ethnicities[Math.floor(Math.random() * ethnicities.length)];
+                    display.textContent = randomEthnicity.toUpperCase();
+                }
+            }, 500); // Delay for effect
+        }
+    </script>
 </body>
 </html>
