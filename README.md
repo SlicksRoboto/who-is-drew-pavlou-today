@@ -45,4 +45,4 @@ Feel free to fork this project and submit pull requests. You can also open issue
 
 ## ⚠️ Disclaimer
 
-This is a parody project meant for entertainment purposes only. It's not intended to offend or make light of any actual ethnicities or cultures.
+This is a parody project meant for entertainment purposes only. It's not intended to offend or make light of any actual ethnicities or cultures. Only intended to make fun of Drew Pavlou who has been caught with alt accounts on social media.
