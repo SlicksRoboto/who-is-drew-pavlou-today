@@ -4,6 +4,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Who is Drew Pavlou today?</title>
+    <style>
+        body {
+            background-color: black;
+            color: green;
+            font-family: 'Courier New', Courier, monospace; /* Commonly used for a calculator-like font */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            text-align: center;
+        }
+        .display {
+            font-size: 2em;
+            margin: 20px 0;
+        }
+        button {
+            background-color: green;
+            color: black;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1em;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: darkgreen;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
@@ -41,10 +71,9 @@
 
         function generateIdentity() {
             const display = document.getElementById('ethnicityDisplay');
-            display.textContent = '...'; // Temporary display while generating
+            display.textContent = '...';
 
             setTimeout(() => {
-                // Randomly decide whether to show a food or an ethnicity
                 if (Math.random() < 0.5) {
                     const randomFood = foods[Math.floor(Math.random() * foods.length)];
                     display.textContent = `EATING ${randomFood.toUpperCase()}`;
@@ -52,7 +81,7 @@
                     const randomEthnicity = ethnicities[Math.floor(Math.random() * ethnicities.length)];
                     display.textContent = randomEthnicity.toUpperCase();
                 }
-            }, 500); // Delay for effect
+            }, 500);
         }
     </script>
 </body>
