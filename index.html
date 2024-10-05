@@ -48,7 +48,7 @@
         <div class="display" id="ethnicityDisplay">
             Click Generate!
         </div>
-        <button onclick="generateEthnicity()">Generate New Identity</button>
+        <button onclick="generateIdentity()">Generate New Identity</button>
     </div>
 
     <script>
@@ -66,12 +66,44 @@
             'Polynesian', 'Mongolian', 'Inuit', 'Maori', 'Bengali'
         ];
 
-        function generateEthnicity() {
+        const foods = [
+            // Asian Foods
+            'Sushi', 'Dim Sum', 'Pho', 'Pad Thai', 'Biryani',
+            'Korean BBQ', 'Ramen', 'Butter Chicken', 'Xiaolongbao', 'Satay',
+            
+            // European Foods
+            'Pizza', 'Paella', 'Croissant', 'Fish & Chips', 'Schnitzel',
+            'Moussaka', 'Pierogi', 'Carbonara', 'Borscht', 'Goulash',
+            
+            // Middle Eastern Foods
+            'Hummus', 'Falafel', 'Shawarma', 'Kebab', 'Dolma',
+            
+            // American Foods
+            'Hamburger', 'Hot Dog', 'Apple Pie', 'Buffalo Wings', 'Jambalaya',
+            
+            // Latin American Foods
+            'Tacos', 'Empanadas', 'Ceviche', 'Pupusas', 'Arepas',
+            
+            // African Foods
+            'Jollof Rice', 'Injera', 'Bobotie', 'Fufu', 'Pap en Vleis',
+            
+            // Fictional Foods
+            'Lembas Bread', 'Klingon Gagh', 'Romulan Ale', 'Butterbeer',
+            'Everlasting Gobstopper', 'Krabby Patty', 'Bachelor Chow'
+        ];
+
+        function generateIdentity() {
             const display = document.getElementById('ethnicityDisplay');
             display.textContent = '...';
+            
             setTimeout(() => {
-                const randomEthnicity = ethnicities[Math.floor(Math.random() * ethnicities.length)];
-                display.textContent = randomEthnicity.toUpperCase();
+                if (Math.random() < 0.5) {
+                    const randomFood = foods[Math.floor(Math.random() * foods.length)];
+                    display.textContent = `EATING ${randomFood.toUpperCase()}`;
+                } else {
+                    const randomEthnicity = ethnicities[Math.floor(Math.random() * ethnicities.length)];
+                    display.textContent = randomEthnicity.toUpperCase();
+                }
             }, 500);
         }
     </script>
