@@ -1,4 +1,3 @@
-
 # Who is Drew Pavlou Today?
 
 A humorous web-based randomizer that generates various fictional and real ethnicities. This project playfully references Drew Pavlou's social media presence where he often adopts different ethnic identities.
@@ -12,7 +11,7 @@ A humorous web-based randomizer that generates various fictional and real ethnic
 
 ## 🚀 Live Demo
 
-https://slicksroboto.github.io/who-is-drew-pavlou-today/
+[Click here to see it in action!](https://slicksroboto.github.io/who-is-drew-pavlou-today/)
 
 ## 💻 Technologies Used
 
@@ -32,7 +31,7 @@ To run this project locally:
 
 1. Clone the repository
 ```bash
-git clone https://github.com/slicksroboto/repo-name.git
+git clone https://github.com/slicksroboto/who-is-drew-pavlou-today.git
 ```
 2. Open `index.html` in your browser
 
